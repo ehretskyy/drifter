@@ -1,0 +1,47 @@
+{
+  "name": "drifter",
+  "version": "0.1.0",
+  "description": "Static analysis for AI context files (.cursorrules, CLAUDE.md, AGENTS.md) - catches dead paths and compresses token bloat.",
+  "type": "module",
+  "bin": {
+    "drifter": "./dist/bin/drifter.js"
+  },
+  "main": "./dist/bin/drifter.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx bin/drifter.ts",
+    "start": "node dist/bin/drifter.js",
+    "test": "tsx --test tests/parser.test.ts tests/validator.test.ts tests/compressor.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehretskyy/drifter.git"
+  },
+  "homepage": "https://github.com/ehretskyy/drifter",
+  "bugs": {
+    "url": "https://github.com/ehretskyy/drifter/issues"
+  },
+  "keywords": [
+    "cli",
+    "ai",
+    "cursorrules",
+    "context",
+    "linter"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.11",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
